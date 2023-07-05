@@ -1,0 +1,68 @@
+2023-07-05 19:12:38,685 p=1599 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] **********
+2023-07-05 19:12:38,705 p=1599 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-05 19:12:40,241 p=1599 u=ubuntu n=ansible | ok: [localhost]
+2023-07-05 19:12:40,258 p=1599 u=ubuntu n=ansible | TASK [install jdk, maven, git] *************************************************
+2023-07-05 19:12:45,023 p=1599 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-07-05 19:13:28,346 p=1599 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2023-07-05 19:13:40,066 p=1599 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2023-07-05 19:13:40,083 p=1599 u=ubuntu n=ansible | TASK [Clone source code from github] *******************************************
+2023-07-05 19:13:41,270 p=1599 u=ubuntu n=ansible | changed: [localhost]
+2023-07-05 19:13:41,287 p=1599 u=ubuntu n=ansible | TASK [mvn install command to build artifact] ***********************************
+2023-07-05 19:14:13,764 p=1599 u=ubuntu n=ansible | changed: [localhost]
+2023-07-05 19:14:13,787 p=1599 u=ubuntu n=ansible | TASK [Copy artifact to files directory] ****************************************
+2023-07-05 19:14:14,904 p=1599 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vprofile-repo/target/vprofile-v2.war)
+2023-07-05 19:14:14,915 p=1599 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] ****************************************
+2023-07-05 19:14:15,350 p=1599 u=ubuntu n=ansible | changed: [localhost]
+2023-07-05 19:14:15,367 p=1599 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-07-05 19:14:15,367 p=1599 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:39,176 p=6814 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2023-07-05 19:18:39,201 p=6814 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-05 19:18:41,417 p=6814 u=ubuntu n=ansible | ok: [cntl]
+2023-07-05 19:18:42,086 p=6814 u=ubuntu n=ansible | ok: [mc01]
+2023-07-05 19:18:42,224 p=6814 u=ubuntu n=ansible | ok: [app01]
+2023-07-05 19:18:42,332 p=6814 u=ubuntu n=ansible | ok: [rmq01]
+2023-07-05 19:18:42,456 p=6814 u=ubuntu n=ansible | ok: [web01]
+2023-07-05 19:18:44,296 p=6814 u=ubuntu n=ansible | ok: [db01]
+2023-07-05 19:18:44,315 p=6814 u=ubuntu n=ansible | TASK [Import VPC setup variable] ***********************************************
+2023-07-05 19:18:44,365 p=6814 u=ubuntu n=ansible | fatal: [cntl]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,390 p=6814 u=ubuntu n=ansible | fatal: [web01]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,409 p=6814 u=ubuntu n=ansible | fatal: [app01]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,433 p=6814 u=ubuntu n=ansible | fatal: [rmq01]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,434 p=6814 u=ubuntu n=ansible | fatal: [mc01]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,442 p=6814 u=ubuntu n=ansible | fatal: [db01]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'group_vars/hostsip'\nSearched in:\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/vars/group_vars/hostsip\n\t/home/ubuntu/Jenkins_Ansible_Java_Application/provision-stack/group_vars/hostsip on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2023-07-05 19:18:44,444 p=6814 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-07-05 19:18:44,445 p=6814 u=ubuntu n=ansible | app01                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:44,445 p=6814 u=ubuntu n=ansible | cntl                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:44,445 p=6814 u=ubuntu n=ansible | db01                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:44,445 p=6814 u=ubuntu n=ansible | mc01                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:44,446 p=6814 u=ubuntu n=ansible | rmq01                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:18:44,446 p=6814 u=ubuntu n=ansible | web01                      : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:30,911 p=7012 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ***
+2023-07-05 19:19:30,920 p=7012 u=ubuntu n=ansible | TASK [Gathering Facts] *********************************************************
+2023-07-05 19:19:32,812 p=7012 u=ubuntu n=ansible | ok: [rmq01]
+2023-07-05 19:19:32,824 p=7012 u=ubuntu n=ansible | ok: [mc01]
+2023-07-05 19:19:32,827 p=7012 u=ubuntu n=ansible | ok: [web01]
+2023-07-05 19:19:32,836 p=7012 u=ubuntu n=ansible | ok: [app01]
+2023-07-05 19:19:33,055 p=7012 u=ubuntu n=ansible | ok: [cntl]
+2023-07-05 19:19:33,933 p=7012 u=ubuntu n=ansible | ok: [db01]
+2023-07-05 19:19:33,951 p=7012 u=ubuntu n=ansible | TASK [Import VPC setup variable] ***********************************************
+2023-07-05 19:19:34,004 p=7012 u=ubuntu n=ansible | ok: [cntl]
+2023-07-05 19:19:34,024 p=7012 u=ubuntu n=ansible | ok: [web01]
+2023-07-05 19:19:34,047 p=7012 u=ubuntu n=ansible | ok: [app01]
+2023-07-05 19:19:34,069 p=7012 u=ubuntu n=ansible | ok: [rmq01]
+2023-07-05 19:19:34,070 p=7012 u=ubuntu n=ansible | ok: [mc01]
+2023-07-05 19:19:34,078 p=7012 u=ubuntu n=ansible | ok: [db01]
+2023-07-05 19:19:34,088 p=7012 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] *************************************
+2023-07-05 19:19:34,937 p=7012 u=ubuntu n=ansible | changed: [rmq01]
+2023-07-05 19:19:34,938 p=7012 u=ubuntu n=ansible | changed: [mc01]
+2023-07-05 19:19:34,941 p=7012 u=ubuntu n=ansible | changed: [web01]
+2023-07-05 19:19:34,942 p=7012 u=ubuntu n=ansible | changed: [app01]
+2023-07-05 19:19:35,054 p=7012 u=ubuntu n=ansible | changed: [cntl]
+2023-07-05 19:19:35,293 p=7012 u=ubuntu n=ansible | changed: [db01]
+2023-07-05 19:19:35,311 p=7012 u=ubuntu n=ansible | PLAY RECAP *********************************************************************
+2023-07-05 19:19:35,311 p=7012 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:35,311 p=7012 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:35,311 p=7012 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:35,312 p=7012 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:35,312 p=7012 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-05 19:19:35,312 p=7012 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
